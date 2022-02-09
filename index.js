@@ -1,3 +1,4 @@
+const axios = require('axios')
 const sign_in = require('./src/signIn');
 const draw = require('./src/draw');
 const dipLucky = require('./src/dipLucky');
@@ -58,7 +59,7 @@ const { autoGame } = require('./src/games/autoRun');
       "msgtype": "textcard",
       "textcard": {
         "title": '掘金定时任务',
-        "description": `<div>签到结果：${sign_res}</div><div>抽奖结果：${draw_res}</div><div>沾喜气结果：${dip_res}</div><div>当前矿石：${data}</div>`,
+        "description": `<div>签到结果：${sign_res}</div><div>抽奖结果：${draw_res}</div><div>沾喜气结果：${dip_res}</div><div>游戏结果：${game_res}</div><div>当前矿石：${now_score}</div><div>较昨日增长：${now_score - yesterday_score}</div>`,
         "url": "URL",
         "btntxt": "点击没用"
       }
