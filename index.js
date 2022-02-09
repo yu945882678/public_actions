@@ -23,15 +23,6 @@ const { autoGame } = require('./src/games/autoRun');
 
   console.log(draw_res);
 
-  // 当前分数
-  const { data } = await fetch('https://api.juejin.cn/growth_api/v1/get_cur_point', {
-    headers,
-    method: 'GET',
-    credentials: 'include'
-  }).then((res) => res.json());
-
-  console.log(`当前矿石：${data}`);
-
   let game_res = '挖矿成功！';
   try {
     await autoGame();
