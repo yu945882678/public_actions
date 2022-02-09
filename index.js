@@ -46,7 +46,7 @@ const { autoGame } = require('./src/games/autoRun');
   console.log(dip_res);
 
   try {
-    const gettokenURL = `https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=${corpid}=ID&corpsecret=${secret}`
+    const gettokenURL = `https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=${corpid}&corpsecret=${secret}`
     var getAccess_token = await axios.get(gettokenURL)
   } catch (error) {
     console.log('获取token错误', error)
