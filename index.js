@@ -49,9 +49,10 @@ const { autoGame } = require('./src/games/autoRun');
     const gettokenURL = `https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=${corpid}=ID&corpsecret=${secret}`
     var getAccess_token = await axios.get(gettokenURL)
   } catch (error) {
-    console.log('推送错误', error)
+    console.log('获取token错误', error)
   };
   try {
+    console.log('Token值：',getAccess_token)
     const url = `https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=${getAccess_token.data.access_token}`;
     await axios.post(url, {
       "touser": touser,
