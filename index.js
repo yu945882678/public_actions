@@ -14,7 +14,12 @@ const { autoGame } = require('./src/games/autoRun');
   console.log(`昨日矿石：${yesterday_score}`);
 
   let sign_res = '';
-
+  try {
+    sign_res = await sign_in();
+  } catch (error) {
+    sign_res = error;
+  }
+  console.log(sign_res);
   let draw_res = '';
   try {
     draw_res = await draw();
